@@ -1,0 +1,25 @@
+.webspeech__final {
+	color: black;
+	padding-right: 3px;
+}
+
+.webspeech__interim {
+	color: gray;
+}
+
+.webspeech--pullright {
+    float: right;
+}
+
+.webspeech__results {
+	font-size: 14px;
+	font-weight: bold;
+	border: 1px solid #ddd;
+	padding: 15px;
+	text-align: left;
+	min-height: 150px;
+}
+
+.webspeech__search-results {
+	padding: 3em 0;
+}
