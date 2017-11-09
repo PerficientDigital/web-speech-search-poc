@@ -7,7 +7,7 @@
 		'no_speech' : 'No speech was detected. You may need to adjust your microphone settings',
 		'no_microphone' : 'No microphone was found. Ensure that a microphone is installed and that microphone settings are configured correctly.',
 		'denied' : 'Permission to use microphone was denied or is blocked.',
-		'upgrade' : 'Web Speech API is not supported by this browser. Chrome version 25 or later.'
+		'upgrade' : 'Web Speech API is not supported by this browser.'
 	}
 	var recognition = null;
 	var recognizing = false;
@@ -27,11 +27,11 @@
 	}
 
 	// initialize
-	if (!('webkitSpeechRecognition' in window)) {
+	if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window) ) {
 		$('.webspeech__start').hide();
 		displayMessage('upgrade');
 	} else {
-		recognition = new webkitSpeechRecognition();
+		recognition = new webkitSpeechRecognition() || new SpeechRecognition();
 		recognition.continuous = true;
 		recognition.interimResults = true;
 		recognition.lang = navigator.language;
